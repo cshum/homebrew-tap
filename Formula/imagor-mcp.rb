@@ -1,28 +1,28 @@
 class ImagorMcp < Formula
   desc "Compose imagor image URLs from a JSON layout, as an MCP server"
   homepage "https://github.com/cshum/imagor-mcp"
-  version "0.7.1"
+  version "0.7.2"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/cshum/imagor-mcp/releases/download/v0.7.1/imagor-mcp_v0.7.1_darwin_arm64"
-      sha256 "82574d5f8dfbee8b12c0c36b7088094176d1d17d69f3f26c79bbdabcbc34dde2"
+      url "https://github.com/cshum/imagor-mcp/releases/download/v0.7.2/imagor-mcp_v0.7.2_darwin_arm64"
+      sha256 "b76e5896217a1a04ce34d0a3ef88e7135ce04704f051b52ad96690868e90bb8e"
     end
     on_intel do
-      url "https://github.com/cshum/imagor-mcp/releases/download/v0.7.1/imagor-mcp_v0.7.1_darwin_amd64"
-      sha256 "b45adfd1297a9ac8009fd92d70b46ea72fe6b54ba4d9141bbb6f2f40727265c5"
+      url "https://github.com/cshum/imagor-mcp/releases/download/v0.7.2/imagor-mcp_v0.7.2_darwin_amd64"
+      sha256 "45bc8b0e66abee43af40918cb0842b3b32870cb1f0b964db3d18f8490cbe655a"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/cshum/imagor-mcp/releases/download/v0.7.1/imagor-mcp_v0.7.1_linux_arm64"
-      sha256 "5c82631abfcc986428ecd01406fedb53af2627eced639ecb95e4d7fc2c7ea87b"
+      url "https://github.com/cshum/imagor-mcp/releases/download/v0.7.2/imagor-mcp_v0.7.2_linux_arm64"
+      sha256 "3b891bbabfaee907adfc53f5c2d7c53b16ae2b9f702b778292e1330b4408a271"
     end
     on_intel do
-      url "https://github.com/cshum/imagor-mcp/releases/download/v0.7.1/imagor-mcp_v0.7.1_linux_amd64"
-      sha256 "a92510f44a8584f9321570485b2610db81ee7e93e35990d56a948b2514dc125a"
+      url "https://github.com/cshum/imagor-mcp/releases/download/v0.7.2/imagor-mcp_v0.7.2_linux_amd64"
+      sha256 "1a3a8a821f1cbfed5b15b723114282deaf796250fab06700e9890964a660ec2f"
     end
   end
 
