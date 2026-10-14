@@ -1,0 +1,31 @@
+name: update formula
+
+# Polls the server repo rather than being pushed to by it: a GITHUB_TOKEN is scoped to
+# its own repository, so the server repo cannot commit here, and the alternative is a
+# PAT living in a second repository. Polling costs a scheduled run and needs no secret.
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/render.py
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          if git diff --quiet; then
+            echo "already current"
+            exit 0
+          fi
+          version=$(grep -m1 'version "' Formula/imagor-mcp.rb | cut -d'"' -f2)
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "imagor-mcp ${version}"
+          git push
